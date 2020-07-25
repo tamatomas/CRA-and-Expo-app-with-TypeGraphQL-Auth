@@ -1,0 +1,7 @@
+node_modules
+
+ormconfig.json
+
+./**/node_modules
+
+./**/__generated__
