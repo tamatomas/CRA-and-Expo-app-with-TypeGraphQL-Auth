@@ -1,6 +1,7 @@
 {
   "name": "@init/web",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.0.2",

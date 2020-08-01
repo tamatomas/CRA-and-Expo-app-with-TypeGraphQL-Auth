@@ -4,6 +4,12 @@
     "packages/*"
   ],
   "scripts": {
-    "start-expo": "cd packages/app && yarn start"    
-  }
+    "start-expo": "cd packages/app && yarn start",
+    "build:server": "lerna run build --scope={@init/common,@init/server}",
+    "build:web": "lerna run build --scope={@init/common,@init/controller,@init/web}"
+  },
+  "dependencies": {
+    "lerna": "^3.22.1"
+  },
+  "name": "CRA-and-Expo-app-with-TypeGraphQL-Auth"
 }
