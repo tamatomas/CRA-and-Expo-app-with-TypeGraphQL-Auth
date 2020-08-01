@@ -19,6 +19,15 @@ const main = async () => {
             req,
             res,
         }),
+        formatError: (err) => {
+            if (err.path![0] === "login") {
+                return {
+                    message: "Incorrect email or password."
+                }
+            }
+
+            return err
+        }
     });
 
     const app = Express();
@@ -47,7 +56,6 @@ const main = async () => {
     );
 
     apolloServer.applyMiddleware({ app, cors: false });
-
     app.listen(4000, () => {
         console.log("server started on http://localhost:4000/graphql");
     });

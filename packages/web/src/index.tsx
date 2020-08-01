@@ -2,10 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import Router from './modules/Router';
+import { ApolloProvider } from '@apollo/client';
+import { apolloClient } from './utils';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router />
+    <ApolloProvider client={apolloClient}>
+      <Router />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

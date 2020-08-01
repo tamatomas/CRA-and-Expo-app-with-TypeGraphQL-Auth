@@ -1,22 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { add } from '../common';
+import React, { Component } from 'react';
+import Navigation from "./src/modules/Navigation"
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { EvaIconsPack } from "@ui-kitten/eva-icons"
+import { ApolloProvider } from "@apollo/client"
+import { apolloClient } from "./src/utils"
 
-export default function App() {  
-  return (
-    <View style={styles.container}>
-      <Text>The result</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class Example extends Component {
+
+  render() {
+    return (
+      <>
+        <ApolloProvider client={apolloClient}>
+          <IconRegistry icons={EvaIconsPack} />
+          <ApplicationProvider {...eva} theme={eva.light}>
+            <Navigation />
+          </ApplicationProvider>
+        </ApolloProvider>
+      </>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

@@ -1,4 +1,16 @@
 {
     "name": "@init/common",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "rm -rf ./dist && tsc"
+    },
+    "dependencies": {
+        "@types/yup": "^0.29.3",
+        "tslint": "^6.1.2",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.9.7",
+        "yup": "^0.29.1"
+    }
 }

@@ -22,14 +22,14 @@ export class RegisterResolver {
     email,
     firstName,
     lastName,
-    password
+    password,    
   }: RegisterInput): Promise<User> {
     const hashedPassword = await bcrypt.hash(password, 12);
 
     const user = await User.create({
       firstName,
       lastName,
-      email,
+      email,      
       password: hashedPassword
     }).save();
 

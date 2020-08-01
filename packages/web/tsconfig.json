@@ -1,47 +1,51 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "baseUrl": ".",
+    "outDir": "build/dist",
     "module": "esnext",
+    "target": "es5",
     "lib": [
-      "dom",
       "es6",
-      "es2017",
+      "dom",
       "esnext.asynciterable"
     ],
-    "jsx": "react",
     "sourceMap": true,
-    "outDir": "./dist",
+    "allowJs": true,
+    "jsx": "react",
     "moduleResolution": "node",
-    "declaration": false,
-    "composite": false,
-    "removeComments": true,
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "noImplicitThis": true,
+    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "types": [
+      "jest",
+      "node",
+      "react",
+      "react-dom",
+      "react-router-dom"
+    ],
     "skipLibCheck": true,
-    "baseUrl": ".",
-    "rootDir": "src",
-    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true
   },
   "exclude": [
-    "./node_modules/**/*.ts"
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts"
   ],
   "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts"
+    "src"
   ]
 }
