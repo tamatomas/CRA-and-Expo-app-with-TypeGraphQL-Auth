@@ -33,7 +33,7 @@ export const RegisterWrapper = (props: Props) => {
                     variables: {
                         data: values
                     }
-                })
+                }).then(() => (null))
             }}>
             {({ errors, touched, handleChange, handleBlur, handleSubmit, values, isValid }) => (
                 props.children({
