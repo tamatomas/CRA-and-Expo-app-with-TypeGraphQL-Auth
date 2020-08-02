@@ -38,12 +38,14 @@ const main = async () => {
         }
     });
 
+    const origin = (process.env.NODE_ENV === "production") ? process.env.REACT_URL : "http://localhost:3000"
+
     const app = Express();
     const RedisStore = connectRedis(session);
     app.use(
         cors({
             credentials: true,
-            origin: "http://localhost:3000"
+            origin
         })
     );
     app.use(
