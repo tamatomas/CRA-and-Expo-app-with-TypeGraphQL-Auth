@@ -12,7 +12,9 @@ const main = async () => {
     if (process.env.NODE_ENV === "production") {
         await createConnection({
             type: "postgres",
-            url: process.env.DATABASE_URL
+            url: process.env.DATABASE_URL,
+            synchronize: true,
+            entities: [__dirname + "/entity/*.*"]
         });
     } else {
         await createConnection();
@@ -39,7 +41,7 @@ const main = async () => {
     });
 
     const origin = (process.env.NODE_ENV === "production") ? process.env.REACT_URL : "http://localhost:3000"
-
+    
     const app = Express();
     const RedisStore = connectRedis(session);
     app.use(
