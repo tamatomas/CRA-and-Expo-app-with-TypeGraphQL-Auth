@@ -12,7 +12,7 @@ interface Props {
 
 export const ForgotPasswordWrapper = (props: Props) => {
     const [forgotPassword, data] = useMutation(FORGOTPASS);
-    if (data.data.forgotPassword && props.callback) {
+    if (data?.data?.forgotPassword && props.callback) {
         props.callback(true);
     }
     return (

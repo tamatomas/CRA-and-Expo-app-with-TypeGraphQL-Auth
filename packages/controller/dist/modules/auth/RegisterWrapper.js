@@ -14,16 +14,18 @@ export var RegisterWrapper = function (props) {
         };
     }, []);
     var _b = useMutation(REGISTER), register = _b[0], data = _b[1];
-    if ((_a = data.data) === null || _a === void 0 ? void 0 : _a.register.id) {
+    if ((_a = data === null || data === void 0 ? void 0 : data.data) === null || _a === void 0 ? void 0 : _a.register.id) {
         console.log("calling back!");
         props.callback();
     }
+    console.log("mutation: ", register);
+    console.log("data: ", data);
     return (React.createElement(Formik, { validateOnBlur: true, initialValues: initialValues, validationSchema: validRegisterSchema, onSubmit: function (values) {
             register({
                 variables: {
                     data: values
                 }
-            });
+            }).then(function () { return (null); });
         } }, function (_a) {
         var errors = _a.errors, touched = _a.touched, handleChange = _a.handleChange, handleBlur = _a.handleBlur, handleSubmit = _a.handleSubmit, values = _a.values, isValid = _a.isValid;
         return (props.children({

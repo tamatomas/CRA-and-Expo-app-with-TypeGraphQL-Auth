@@ -19,10 +19,12 @@ export const RegisterWrapper = (props: Props) => {
         }
     }, []);
     const [register, data] = useMutation(REGISTER);
-    if (data.data?.register.id) {
+    if (data?.data?.register.id) {
         console.log("calling back!");
         props.callback();
     }
+    console.log("mutation: ", register);
+    console.log("data: ", data);
     return (
         <Formik
             validateOnBlur

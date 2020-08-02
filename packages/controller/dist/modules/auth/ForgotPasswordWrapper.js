@@ -4,8 +4,9 @@ import { registerEmailValidation } from "@init/common";
 import { useMutation } from '@apollo/client';
 import { FORGOTPASS } from '../../graphql/auth';
 export var ForgotPasswordWrapper = function (props) {
-    var _a = useMutation(FORGOTPASS), forgotPassword = _a[0], data = _a[1];
-    if (data.data.forgotPassword && props.callback) {
+    var _a;
+    var _b = useMutation(FORGOTPASS), forgotPassword = _b[0], data = _b[1];
+    if (((_a = data === null || data === void 0 ? void 0 : data.data) === null || _a === void 0 ? void 0 : _a.forgotPassword) && props.callback) {
         props.callback(true);
     }
     return (React.createElement(Formik, { initialValues: {
