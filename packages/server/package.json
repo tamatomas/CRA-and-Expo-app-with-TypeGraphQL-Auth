@@ -41,7 +41,7 @@
     "ts-node": "^8.10.2",
     "ts-node-dev": "^1.0.0-pre.52",
     "type-graphql": "^1.0.0-rc.3",
-    "typeorm": "^0.2.25",
+    "typeorm": "^0.3.26",
     "typescript": "^3.9.7",
     "uuid": "^8.2.0"
   }
